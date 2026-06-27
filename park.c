@@ -11,7 +11,7 @@
 #define EXIT_GATES 2
 #define TOTAL_CARS 20
 #define QUEUE_SIZE (TOTAL_CARS + ENTRY_GATES)
-va_list
+
 typedef struct
 {
     int car_id;
@@ -137,8 +137,8 @@ void *entry_gate_thread(void *arg)
             break;
         }
 
-        sem_wait(&entry_gate_sem);           // 等待入口闸口空闲
-        int gate_id = allocate_entry_gate(); // 真实分配一个闸口编号
+        sem_wait(&entry_gate_sem);                 // 等待入口闸口空闲
+        int gate_id = allocate_entry_gate();      // 真实分配一个闸口编号
         safe_printf("车辆 %d 使用入口闸口 %d 进入等待停车\n", req->car_id, gate_id);
 
         // 等待停车位可用
