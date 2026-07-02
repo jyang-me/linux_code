@@ -1,3 +1,7 @@
 t
 ticket
 park
+*.log
+.vscode/
+linux-source-*
+
